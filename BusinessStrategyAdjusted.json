@@ -2,7 +2,6 @@
   "Business Strategy": [
     {
       "content": {
-        "total-slides": 8,
         "slide-content": {
           "slide-1": {
             "slide-title": "Introduction and Course Reflection",
@@ -72,5 +71,4 @@
       }
     },
   ],
-  "total_word_count": 4555
 }
