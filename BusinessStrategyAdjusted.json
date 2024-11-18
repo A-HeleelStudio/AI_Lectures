@@ -1,6 +1,10 @@
+Here is the updated JSON script with incremental "scene-number" values starting from 2:
+
+```json
 {
   "scenes": [
     {
+      "scene-number": 2,
       "scene-title": "Introduction and Course Reflection",
       "content-to-speak": "Good morning, everyone. I hope you're all doing well today. As we delve into our lecture, I want to take a moment to reflect on the journey we've embarked on so far in this course. We've covered a variety of topics that are essential for anyone aspiring to excel in the business world. From understanding the nuances of 'Statistics for Management' to navigating the complexities of 'Taxation', and exploring the intricacies of 'Consumer and Intellectual Property Law', each of these subjects has laid a foundation for the strategic thinking and planning we'll be discussing today.",
       "slide-title": "Introduction and Course Reflection",
@@ -8,6 +12,7 @@
       "line-2": "Covered essential business topics."
     },
     {
+      "scene-number": 3,
       "scene-title": "Previous Lessons Recap",
       "content-to-speak": "In our previous lessons, we explored how statistical tools can aid in making informed management decisions. This is crucial because, in the realm of business strategy, data-driven decision-making is a cornerstone. Similarly, our discussions on taxation have highlighted the importance of understanding fiscal policies and their implications on business operations. This knowledge is vital when crafting strategies that align with legal and financial frameworks. Furthermore, our exploration of consumer and intellectual property law has underscored the significance of protecting business interests while fostering innovation and creativity. These elements are integral to strategic planning, as they ensure that a business not only survives but thrives in a competitive market.",
       "slide-title": "Previous Lessons Recap",
@@ -15,6 +20,7 @@
       "line-2": "Taxation and law are crucial for strategy."
     },
     {
+      "scene-number": 4,
       "scene-title": "Strategic Management Focus",
       "content-to-speak": "Today, we'll be building on these concepts as we delve into the world of strategic management. Our focus will be on understanding the impact and influence of the macroenvironment on an organisation and its business strategies. We'll also explore the strategic context, including missions, visions, and objectives, and discuss the definition and meaning of strategy. Moreover, we'll differentiate between business strategy and corporate strategy, and examine the role of strategy in achieving business objectives and goals. Finally, we'll look at different strategic planning techniques that can be employed to steer an organisation towards success.",
       "slide-title": "Strategic Management Focus",
@@ -22,6 +28,7 @@
       "line-2": "Differentiating business and corporate strategy."
     },
     {
+      "scene-number": 5,
       "scene-title": "Macroenvironment Analysis",
       "content-to-speak": "Let's start by considering the macroenvironment. The macroenvironment encompasses the broader forces that affect an organisation's ability to operate effectively. These forces include economic, political, social, technological, environmental, and legal factors, often referred to as PESTEL factors. Understanding these elements is crucial because they can significantly impact an organisation's strategic choices. For instance, economic conditions such as inflation rates, interest rates, and economic growth can influence consumer purchasing power and, consequently, a company's sales and profitability. Similarly, technological advancements can create new opportunities for innovation and efficiency but can also pose threats to businesses that fail to adapt.",
       "slide-title": "Macroenvironment Analysis",
@@ -29,6 +36,7 @@
       "line-2": "PESTEL factors are crucial for strategic choices."
     },
     {
+      "scene-number": 6,
       "scene-title": "Case Study: Nokia",
       "content-to-speak": "To illustrate this, let's consider the example of Nokia, a company that was once a leader in the mobile phone industry. Despite its strong market position, Nokia failed to adapt to the rapid technological changes brought about by the smartphone revolution. The company's inability to respond to the macroenvironmental shift towards touchscreen technology and app-based ecosystems led to its decline. This example highlights the importance of continuously analysing the macroenvironment and adapting strategies accordingly.",
       "slide-title": "Case Study: Nokia",
@@ -36,6 +44,7 @@
       "line-2": "Importance of adapting to technological changes."
     },
     {
+      "scene-number": 7,
       "scene-title": "Strategic Context: Missions, Visions, Objectives",
       "content-to-speak": "Moving on to the strategic context, it's essential to understand the role of missions, visions, and objectives in guiding an organisation's strategic direction. A mission statement defines the organisation's purpose and primary objectives, serving as a guide for decision-making. A vision statement, on the other hand, outlines the organisation's long-term aspirations and the impact it seeks to have on the world. Objectives are specific, measurable goals that an organisation aims to achieve within a defined timeframe. Together, these elements provide a framework for strategic planning and help ensure that all organisational efforts are aligned towards a common goal. Consider the case of Tesla, whose mission is to accelerate the world's transition to sustainable energy. This mission guides the company's strategic decisions, from developing electric vehicles to investing in renewable energy technologies. Tesla's vision of creating a sustainable future drives its innovation and expansion efforts, while its objectives, such as increasing production capacity and reducing costs, provide measurable targets for success.",
       "slide-title": "Strategic Context: Missions, Visions, Objectives",
@@ -43,6 +52,7 @@
       "line-2": "Tesla's mission drives strategic decisions."
     },
     {
+      "scene-number": 8,
       "scene-title": "Understanding Strategy",
       "content-to-speak": "Now, let's delve into the definition and meaning of strategy. In essence, strategy is a plan of action designed to achieve a specific goal or set of goals. It involves making choices about how to allocate resources, compete in the market, and create value for stakeholders. Strategy is not just about setting goals; it's about determining the best way to achieve them in the face of competition and changing market conditions. It's important to distinguish between business strategy and corporate strategy. Business strategy focuses on how a company competes in a particular market or industry. It involves decisions about product offerings, pricing, marketing, and distribution. Corporate strategy, on the other hand, is concerned with the overall scope and direction of an organisation. It involves decisions about which markets or industries to enter, how to allocate resources across different business units, and how to create synergies between them.",
       "slide-title": "Understanding Strategy",
@@ -50,6 +60,7 @@
       "line-2": "Difference between business and corporate strategy."
     },
     {
+      "scene-number": 9,
       "scene-title": "Strategic Planning Techniques",
       "content-to-speak": "A classic example of corporate strategy is the diversification approach taken by Virgin Group. Under the leadership of Richard Branson, Virgin has expanded into various industries, including music, airlines, telecommunications, and space travel. This corporate strategy of diversification allows Virgin to spread risk across different markets and leverage its brand strength to enter new sectors. The role of strategy in achieving business objectives and goals cannot be overstated. A well-crafted strategy provides a roadmap for an organisation to follow, ensuring that all efforts are focused on achieving desired outcomes. It helps organisations prioritise initiatives, allocate resources effectively, and respond to changes in the market environment. Strategic intent is a concept that captures an organisation's commitment to achieving ambitious goals. It involves setting a clear vision for the future and aligning all organisational efforts.",
       "slide-title": "Strategic Planning Techniques",
@@ -74,3 +85,4 @@
     }
   }
 }
+```
