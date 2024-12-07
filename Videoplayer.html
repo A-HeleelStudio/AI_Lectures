@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Drive Video Player</title>
+    <title>Google Drive Folder Video Player</title>
     <style>
         body {
             margin: 0;
@@ -11,7 +11,7 @@
             background-color: #000;
             color: #fff;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
             overflow: hidden;
@@ -48,42 +48,63 @@
 <body>
     <div class="player-container">
         <video id="videoPlayer" controls autoplay>
-            <source src="https://drive.google.com/file/d/1SaazzJ5_kQVhxk6l-XKZGnRyJ8f6Nyrq/view?usp=sharing" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="controls">
-            <button class="button" id="toggleCaptions">Enable/Disable Captions</button>
+            <button class="button" id="prevVideo">Previous</button>
+            <button class="button" id="nextVideo">Next</button>
         </div>
     </div>
     <script>
-        const videos = [
-            "https://drive.google.com/uc?export=download&id=1SaazzJ5_kQVhxk6l-XKZGnRyJ8f6Nyrq"
-        ];
+        const folderId = "1YcicrM1OhUSRpuXaWyu-1hJi_K9nCSBY"; // Your folder ID
+        const apiKey = "AIzaSyCehr_47AeIymWODTdbE3TV_YrmA26zdLg"; // Your API Key
 
-        const videoPlayer = document.getElementById('videoPlayer');
-        const toggleCaptionsBtn = document.getElementById('toggleCaptions');
+        let videoPlayer = document.getElementById('videoPlayer');
+        let videoIndex = 0;
+        let videoList = [];
 
-        // Auto-play next video (if more videos exist in playlist)
-        videoPlayer.addEventListener('ended', () => {
-            videoPlayer.currentTime = 0;
-            videoPlayer.play();
-        });
-
-        // Toggle captions (if available)
-        toggleCaptionsBtn.addEventListener('click', () => {
-            const captions = videoPlayer.textTracks[0];
-            if (captions) {
-                if (captions.mode === 'showing') {
-                    captions.mode = 'hidden';
-                    toggleCaptionsBtn.textContent = 'Enable Captions';
+        async function fetchVideos() {
+            try {
+                const response = await fetch(
+                    `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${apiKey}&fields=files(id,name,mimeType)`
+                );
+                const data = await response.json();
+                videoList = data.files
+                    .filter(file => file.mimeType === "video/mp4")
+                    .map(file => `https://drive.google.com/uc?export=download&id=${file.id}`);
+                
+                if (videoList.length > 0) {
+                    loadVideo(videoIndex);
                 } else {
-                    captions.mode = 'showing';
-                    toggleCaptionsBtn.textContent = 'Disable Captions';
+                    alert("No videos found in this folder.");
                 }
-            } else {
-                alert('No captions available for this video.');
+            } catch (error) {
+                console.error("Error fetching videos:", error);
+                alert("Failed to fetch videos from Google Drive.");
             }
+        }
+
+        function loadVideo(index) {
+            videoPlayer.src = videoList[index];
+            videoPlayer.play();
+        }
+
+        document.getElementById('prevVideo').addEventListener('click', () => {
+            videoIndex = (videoIndex - 1 + videoList.length) % videoList.length;
+            loadVideo(videoIndex);
         });
+
+        document.getElementById('nextVideo').addEventListener('click', () => {
+            videoIndex = (videoIndex + 1) % videoList.length;
+            loadVideo(videoIndex);
+        });
+
+        videoPlayer.addEventListener('ended', () => {
+            videoIndex = (videoIndex + 1) % videoList.length;
+            loadVideo(videoIndex);
+        });
+
+        fetchVideos();
     </script>
 </body>
 </html>
