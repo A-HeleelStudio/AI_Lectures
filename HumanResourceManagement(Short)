@@ -1,0 +1,27 @@
+{
+  "lecture_name": "Human Resource Management",
+  "total_words_count": 6199,
+  "parts": [
+    {
+      "part-1": [
+        {
+          "total_slides": 9,
+          "slides_content": [
+            {
+              "slide_number": 1,
+              "slide_title": "Introduction and Recap",
+              "line-1": "Reflecting on previous business lessons",
+              "line-2": "Exploring business dynamics and marketing",
+              "content_to_speak": "Good morning, everyone. I hope you're all doing well today. As we delve into our next topic, let's take a moment to reflect on what we've covered so far in our journey through the world of business. In our previous lessons, we explored the intricate dynamics of business and the business environment, where we discussed how businesses operate within various contexts and the external factors that influence them. We also delved into marketing processes and planning, understanding how businesses strategise to reach their target audiences and the importance of aligning marketing efforts with organisational goals."
+            },
+            {
+              "slide_number": 2,
+              "slide_title": "Focus on Human Resource Management",
+              "line-1": "Introduction to HRM's role in business",
+              "line-2": "HRM's impact on organisational performance",
+              "content_to_speak": "Today, we are going to shift our focus to a crucial aspect of any organisation: Human Resource Management, or HRM. As we discussed the business environment and marketing, we touched upon the importance of people in driving business success. Now, we will explore this in greater depth, examining how HRM plays a pivotal role in creating sustainable organisational performance and contributing to business success."
+            }
+          }
+        }
+      ]
+    }
