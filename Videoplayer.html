@@ -3,65 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Drive Folder Video Player</title>
+    <title>Full-Screen Video Player</title>
     <style>
-        body {
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
             font-family: Arial, sans-serif;
             background-color: #000;
             color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
         }
         .player-container {
-            width: 90%;
-            max-width: 800px;
-            text-align: center;
+            position: relative;
+            width: 100%;
+            height: 100%;
         }
         video {
             width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+            height: 100%;
+            object-fit: cover;
         }
         .controls {
-            margin-top: 10px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
         }
         .button {
-            background-color: #1e1e1e;
+            background-color: transparent;
             color: #fff;
             border: none;
-            padding: 10px 15px;
-            margin: 5px;
-            border-radius: 5px;
+            padding: 10px;
+            margin: 0 5px;
             cursor: pointer;
             font-size: 16px;
         }
         .button:hover {
-            background-color: #333;
+            color: #1e90ff;
         }
     </style>
 </head>
 <body>
     <div class="player-container">
         <video id="videoPlayer" controls autoplay>
+            <track label="English" kind="subtitles" srclang="en" src="captions.vtt" default>
             Your browser does not support the video tag.
         </video>
         <div class="controls">
-            <button class="button" id="prevVideo">Previous</button>
-            <button class="button" id="nextVideo">Next</button>
+            <button class="button" id="prevVideo">⏮ Previous</button>
+            <button class="button" id="toggleCaptions">🔤 Captions</button>
+            <button class="button" id="nextVideo">⏭ Next</button>
         </div>
     </div>
     <script>
         const folderId = "1YcicrM1OhUSRpuXaWyu-1hJi_K9nCSBY"; // Your folder ID
         const apiKey = "AIzaSyCehr_47AeIymWODTdbE3TV_YrmA26zdLg"; // Your API Key
 
-        let videoPlayer = document.getElementById('videoPlayer');
+        const videoPlayer = document.getElementById("videoPlayer");
+        const prevButton = document.getElementById("prevVideo");
+        const nextButton = document.getElementById("nextVideo");
+        const toggleCaptions = document.getElementById("toggleCaptions");
+
         let videoIndex = 0;
         let videoList = [];
+        let captionsEnabled = true;
 
         async function fetchVideos() {
             try {
@@ -89,17 +106,29 @@
             videoPlayer.play();
         }
 
-        document.getElementById('prevVideo').addEventListener('click', () => {
+        prevButton.addEventListener("click", () => {
             videoIndex = (videoIndex - 1 + videoList.length) % videoList.length;
             loadVideo(videoIndex);
         });
 
-        document.getElementById('nextVideo').addEventListener('click', () => {
+        nextButton.addEventListener("click", () => {
             videoIndex = (videoIndex + 1) % videoList.length;
             loadVideo(videoIndex);
         });
 
-        videoPlayer.addEventListener('ended', () => {
+        toggleCaptions.addEventListener("click", () => {
+            const track = videoPlayer.textTracks[0];
+            if (captionsEnabled) {
+                track.mode = "disabled";
+                toggleCaptions.textContent = "🔤 Captions Off";
+            } else {
+                track.mode = "showing";
+                toggleCaptions.textContent = "🔤 Captions On";
+            }
+            captionsEnabled = !captionsEnabled;
+        });
+
+        videoPlayer.addEventListener("ended", () => {
             videoIndex = (videoIndex + 1) % videoList.length;
             loadVideo(videoIndex);
         });
